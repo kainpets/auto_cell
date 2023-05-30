@@ -1,0 +1,36 @@
+const S = 2;
+const GoL = {
+    'dead': {
+        '3': 'alive'
+        'otherwise': 'dead'
+    },
+    'alive': {
+        '2': 'alive',
+        '3': 'alive',
+        'otherwise': 'dead',
+    }
+}
+
+current_cell = 'dead' | 'alive';
+nbors = ...; //0..8
+asser(0 <= nbors && nbors <= 8);
+next_cell = GoL[current_cell][nbors];
+
+///////////////////////////////////
+switch (current_cell) {
+    case 'dead': {
+        if (nbors === 3) {
+            next_cell = 'alive';
+        } else {
+            next_cell = 'dead'
+        }
+    } break;
+
+    case 'alive': {
+        if (2 == nbors || nbors == 3) {
+            next_cell = 'alive'
+        } else {
+            next_cell = 'dead
+        }
+    } break;
+}
